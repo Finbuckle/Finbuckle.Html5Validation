@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{85DDD17E-B6D6-48B5-9E93-211CC56EF39D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finbuckle.Html5Validation", "src\Finbuckle.Html5Validation\Finbuckle.Html5Validation.csproj", "{BE4B67DB-2E0A-460D-BEA7-D057926F9905}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A07E0FF8-8047-4ACD-AD65-D943A0E4DF41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE4B67DB-2E0A-460D-BEA7-D057926F9905} = {85DDD17E-B6D6-48B5-9E93-211CC56EF39D}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE4B67DB-2E0A-460D-BEA7-D057926F9905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4B67DB-2E0A-460D-BEA7-D057926F9905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4B67DB-2E0A-460D-BEA7-D057926F9905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4B67DB-2E0A-460D-BEA7-D057926F9905}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+        <Title>Finbuckle.Html5Validation</Title>
+        <Description>Html5 standard validation support for ASP.NET Core.</Description>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>default</LangVersion>
+        <Version>1.0.0</Version>
+        <Authors>Finbuckle LLC</Authors>
+        <Copyright>Copyright Finbuckle LLC, Andrew White, and Contributors</Copyright>
+        <PackageIconUrl>https://www.finbuckle.com/images/finbuckle-128x128.png</PackageIconUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/Finbuckle/Finbuckle.Html5Validation</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageTags>finbuckle;html5;validation</PackageTags>
+        <PackageIcon>finbuckle-128x128.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../finbuckle-128x128.png" Pack="true" PackagePath="\"/>
+        <None Include="../../README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+</Project>
