@@ -7,7 +7,7 @@
 5. [License](#license)
 
 ## Introduction
-Client form validation in ASP.NET Core sucks.
+Client side form validation in ASP.NET Core sucks.
 
 Specifically, tag helpers and `HTMLHelper` methods
 generate [non-standard validation attributes](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-8.0#client-side-validation)
