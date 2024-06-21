@@ -3,7 +3,8 @@
 1. [Introduction](#introduction)
 2. [Installation](#installation)
 3. [Supported Data Annotations](#supported-data-annotations)
-4. [License](#license)
+4. [FAQ](#faq)
+5. [License](#license)
 
 ## Introduction
 Client form validation in ASP.NET Core sucks.
@@ -67,6 +68,23 @@ builder.Services.AddHtml5Validation();
 
 // ... rest of file omitted.
 ```
+## FAQ
+
+- **Why not just use the `jquery.validate` and `jquery.validate.unobtrusive` libraries?**
+
+  *These libraries are not standard HTML5 validation attributes and require additional JavaScript libraries to work. 
+  This library generates standard HTML5 validation attributes that work out of the box with modern browsers.*
+
+
+- **Does it have any imapct on server side validation?**
+
+  *No, this library only affects client-side validation.*
+
+
+- **Does this library work with Blazor?**
+
+  *No, this library only works with ASP.NET Core MVC Razor Pages and MVC apps that use tag helpers and `HTMLHelper` 
+  form input methods.*
 
 ## License
 
