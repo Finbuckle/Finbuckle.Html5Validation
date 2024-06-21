@@ -1,8 +1,8 @@
 # Finbuckle.Html5Validation
 
 1. [Introduction](#introduction)
-2. [Supported Data Annotations](#supported-data-annotations)
-3. [Installation](#installation)
+2. [Installation](#installation)
+3. [Supported Data Annotations](#supported-data-annotations)
 4. [License](#license)
 
 ## Introduction
@@ -16,6 +16,20 @@ This library overrides this behavior to generate standard HTML5 validation attri
 
 > If you like this library, check out our main
 > project [Finbuckle.MultiTenant](https://github.com/Finbuckle/Finbuckle.MultiTenant) and consider becoming a sponsor.
+
+## Installation
+
+1. Add the `Finbuckle.Html5Validation` NuGet package to your project.
+
+2. Add the `Html5Validation` service to your app:
+```csharp
+using Finbuckle.Html5Validation;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHtml5Validation();
+
+// Rest of app code omitted.
+```
 
 ## Supported Data Annotations
 
@@ -40,8 +54,7 @@ The following data annotations are supported:
 
 1. Add the `Finbuckle.Html5Validation` NuGet package to your project.
 
-```bash
-2. In your app service configuration 
+2. In your app configuration add the `Html5Validation` service:
 ```csharp
 using Finbuckle.Html5Validation;
 
