@@ -15,11 +15,19 @@ and require the use of the `jquery.validate` and `jquery.validate.unobtrusive` l
 
 This library overrides this behavior to generate standard HTML5 validation attributes.
 
-## <a name="whats-new"></a> What's New in v<span class="_version"></span>
+## <a name="whats-new"></a> What's New in v<span class="_version">9.0.0</span>
 
-> This section only lists release update details specific to v<span class="_version"></span>. See
+> This section only lists release update details specific to v<span class="_version">9.0.0</span>. See
 > the [changelog file](CHANGELOG.md) for all release update details.
 <!--_release-notes-->
+
+### ⚠ BREAKING CHANGES
+
+* .NET 6 support removed
+
+### Features
+
+* add .NET 9 and package lockfile support ([21606eb](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/21606eba808f10fcd55fdcc9342c272edaed2d29))
 <!--_release-notes-->
 
 ## Installation
