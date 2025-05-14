@@ -7,7 +7,7 @@
 5. [License](#license)
 
 ## Introduction
-Client side form validation in ASP.NET Core sucks.
+Client side form validation in ASP.NET Core stinks.
 
 Specifically, tag helpers and `HTMLHelper` methods
 generate [non-standard validation attributes](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-8.0#client-side-validation)
@@ -15,8 +15,12 @@ and require the use of the `jquery.validate` and `jquery.validate.unobtrusive` l
 
 This library overrides this behavior to generate standard HTML5 validation attributes.
 
-> If you like this library, check out our main
-> project [Finbuckle.MultiTenant](https://github.com/Finbuckle/Finbuckle.MultiTenant) and consider becoming a sponsor.
+## <a name="whats-new"></a> What's New in v<span class="_version"></span>
+
+> This section only lists release update details specific to v<span class="_version"></span>. See
+> the [changelog file](CHANGELOG.md) for all release update details.
+<!--_release-notes-->
+<!--_release-notes-->
 
 ## Installation
 
