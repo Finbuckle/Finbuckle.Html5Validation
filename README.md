@@ -1,10 +1,11 @@
 # Finbuckle.Html5Validation
 
 1. [Introduction](#introduction)
-2. [Installation](#installation)
-3. [Supported Data Annotations](#supported-data-annotations)
-4. [FAQ](#faq)
-5. [License](#license)
+2. [What's New in v<span class="_version">9.0.0</span>](#whats-new)
+3. [Installation](#installation)
+4. [Supported Data Annotations](#supported-data-annotations)
+5. [FAQ](#faq)
+6. [License](#license)
 
 ## Introduction
 Client side form validation in ASP.NET Core stinks.
