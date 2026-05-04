@@ -15,7 +15,7 @@ namespace Finbuckle.Html5Validation.Internal;
 /// <summary>
 /// <see cref="AttributeAdapterBase{TAttribute}"/> for <see cref="RequiredAttribute"/>.
 /// </summary>
-public class RequiredAttributeAdapter : Html5AttributeAdapterBase<RequiredAttribute>
+internal class RequiredAttributeAdapter : Html5AttributeAdapterBase<RequiredAttribute>
 {
     /// <summary>
     /// Initializes a new instance of <see cref="RequiredAttributeAdapter"/>.

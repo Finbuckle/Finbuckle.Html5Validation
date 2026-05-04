@@ -16,7 +16,7 @@ namespace Finbuckle.Html5Validation.Internal;
 /// A validation adapter that is used to map <see cref="DataTypeAttribute"/>'s to a single client side validation
 /// rule.
 /// </summary>
-public class DataTypeAttributeAdapter : Html5AttributeAdapterBase<DataTypeAttribute>
+internal class DataTypeAttributeAdapter : Html5AttributeAdapterBase<DataTypeAttribute>
 {
     public DataTypeAttributeAdapter(DataTypeAttribute attribute, IStringLocalizer? stringLocalizer)
         : base(attribute, stringLocalizer)

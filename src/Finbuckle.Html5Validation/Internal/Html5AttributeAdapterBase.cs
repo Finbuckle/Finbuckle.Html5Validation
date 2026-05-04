@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public abstract class Html5AttributeAdapterBase<TAttribute> : AttributeAdapterBase<TAttribute>
+internal abstract class Html5AttributeAdapterBase<TAttribute> : AttributeAdapterBase<TAttribute>
     where TAttribute : ValidationAttribute
 {
     protected Html5AttributeAdapterBase(TAttribute attribute, IStringLocalizer? stringLocalizer)

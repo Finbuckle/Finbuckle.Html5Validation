@@ -14,7 +14,7 @@ namespace Finbuckle.Html5Validation.Internal;
 /// <summary>
 /// Creates an <see cref="IAttributeAdapter"/> for the given attribute.
 /// </summary>
-public class Html5ValidationAttributeAdapterProvider : IValidationAttributeAdapterProvider
+internal class Html5ValidationAttributeAdapterProvider : IValidationAttributeAdapterProvider
 {
     /// <summary>
     /// Creates an <see cref="IAttributeAdapter"/> for the given attribute.

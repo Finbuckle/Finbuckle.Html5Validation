@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class MaxLengthAttributeAdapter : Html5AttributeAdapterBase<MaxLengthAttribute>
+internal class MaxLengthAttributeAdapter : Html5AttributeAdapterBase<MaxLengthAttribute>
 {
     private readonly string _max;
 
