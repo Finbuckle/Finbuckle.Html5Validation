@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class RangeAttributeAdapter : Html5AttributeAdapterBase<RangeAttribute>
+internal class RangeAttributeAdapter : Html5AttributeAdapterBase<RangeAttribute>
 {
     private readonly string _max;
     private readonly string _min;

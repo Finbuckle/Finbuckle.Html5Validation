@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class MinLengthAttributeAdapter : Html5AttributeAdapterBase<MinLengthAttribute>
+internal class MinLengthAttributeAdapter : Html5AttributeAdapterBase<MinLengthAttribute>
 {
     private readonly string _min;
 
