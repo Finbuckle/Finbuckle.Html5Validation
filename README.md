@@ -1,7 +1,7 @@
 # Finbuckle.Html5Validation
 
 1. [Introduction](#introduction)
-2. [What's New in v<span class="_version">9.0.0</span>](#whats-new)
+2. [What's New in v<span class="_version">9.1.0</span>](#whats-new)
 3. [Installation](#installation)
 4. [Supported Data Annotations](#supported-data-annotations)
 5. [FAQ](#faq)
@@ -16,19 +16,16 @@ and require the use of the `jquery.validate` and `jquery.validate.unobtrusive` l
 
 This library overrides this behavior to generate standard HTML5 validation attributes.
 
-## <a name="whats-new"></a> What's New in v<span class="_version">9.0.0</span>
+## <a name="whats-new"></a> What's New in v<span class="_version">9.1.0</span>
 
-> This section only lists release update details specific to v<span class="_version">9.0.0</span>. See
+> This section only lists release update details specific to v<span class="_version">9.1.0</span>. See
 > the [changelog file](CHANGELOG.md) for all release update details.
 <!--_release-notes-->
 
-### ⚠ BREAKING CHANGES
-
-* .NET 6 support removed
-
 ### Features
 
-* add .NET 9 and package lockfile support ([21606eb](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/21606eba808f10fcd55fdcc9342c272edaed2d29))
+* Add title attribute containing error message to validated inputs ([#3](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/3)) ([b285611](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/b2856113be523d196a7b849cd7b3e86a949ea7d6))
+* Update to .NET 10 ([13d0ce8](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/13d0ce8248f8675b1ea696a0f46963b88dd7234c))
 <!--_release-notes-->
 
 ## Installation
