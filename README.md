@@ -11,7 +11,7 @@
 Client side form validation in ASP.NET Core stinks.
 
 Specifically, tag helpers and `HTMLHelper` methods
-generate [non-standard validation attributes](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-8.0#client-side-validation)
+generate [non-standard validation attributes](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-10.0#client-side-validation)
 and require the use of the `jquery.validate` and `jquery.validate.unobtrusive` libraries.
 
 This library overrides this behavior to generate standard HTML5 validation attributes.
