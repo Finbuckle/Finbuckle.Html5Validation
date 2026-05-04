@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class StringLengthAttributeAdapter : AttributeAdapterBase<StringLengthAttribute>
+public class StringLengthAttributeAdapter : Html5AttributeAdapterBase<StringLengthAttribute>
 {
     private readonly string _max;
     private readonly string _min;
@@ -43,6 +43,8 @@ public class StringLengthAttributeAdapter : AttributeAdapterBase<StringLengthAtt
         {
             MergeAttribute(context.Attributes, "minlength", _min);
         }
+
+        MergeErrorMessageTitle(context);
     }
 
     /// <inheritdoc />
