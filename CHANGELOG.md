@@ -5,13 +5,6 @@
 * The library now targets net10.0 only. .NET 8 and .NET 9
 are no longer supported. Applications must upgrade to .NET 10.
 
-This formalizes the breaking change introduced in
-https://github.com/Finbuckle/Finbuckle.Html5Validation/pull/5 which was
-inadvertently committed as a non-breaking feat: rather than feat!:.
-
-Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
-Co-authored-by: AndrewTriesToCode <4422897+AndrewTriesToCode@users.noreply.github.com>
-
 ### Features
 
 * Add title attribute containing error message to validated inputs ([#3](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/3)) ([b285611](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/b2856113be523d196a7b849cd7b3e86a949ea7d6))
