@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net9.0;net8.0</TargetFrameworks>
+        <TargetFrameworks>net10.0</TargetFrameworks>
         <Title>Finbuckle.Html5Validation</Title>
         <Description>Html5 standard validation support for ASP.NET Core.</Description>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>default</LangVersion>
-        <Version>9.0.0</Version>
+        <Version>10.0.0</Version>
         <Authors>Finbuckle LLC</Authors>
         <Copyright>Copyright Finbuckle LLC, Andrew White, and Contributors</Copyright>
         <PackageIconUrl>https://www.finbuckle.com/images/finbuckle-128x128.png</PackageIconUrl>
