@@ -13,8 +13,7 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            8
-            9
+            10
       - name: build and test
         run: |
           dotnet restore

@@ -14,8 +14,7 @@ jobs:
       - uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
         with:
           dotnet-version: |
-            8
-            9
+            10
       - name: Create the package
         run: dotnet test -c Release -p:ContinuousIntegrationBuild=true && dotnet pack --no-build -c Release --output nupkgs
       - name: NuGet login
