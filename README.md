@@ -25,14 +25,7 @@ This library overrides this behavior to generate standard HTML5 validation attri
 ### ⚠ BREAKING CHANGES
 
 * The library now targets net10.0 only. .NET 8 and .NET 9
-are no longer supported. Applications must upgrade to .NET 10.
-
-This formalizes the breaking change introduced in
-https://github.com/Finbuckle/Finbuckle.Html5Validation/pull/5 which was
-inadvertently committed as a non-breaking feat: rather than feat!:.
-
-Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot.noreply.github.com>
-Co-authored-by: AndrewTriesToCode <4422897+AndrewTriesToCode.noreply.github.com>
+are no longer supported.
 
 ### Features
 
