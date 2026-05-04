@@ -4,6 +4,8 @@ on: [workflow_dispatch]
 
 permissions:
   contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
   build-test-prep-release:
@@ -31,5 +33,5 @@ jobs:
           npm install -D conventional-changelog-conventionalcommits
       - name: run semantic-release
         env:
-          GH_TOKEN: ${{ secrets.workflow_pat }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release --dry-run
