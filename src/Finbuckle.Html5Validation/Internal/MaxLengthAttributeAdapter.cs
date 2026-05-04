@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class MaxLengthAttributeAdapter : AttributeAdapterBase<MaxLengthAttribute>
+public class MaxLengthAttributeAdapter : Html5AttributeAdapterBase<MaxLengthAttribute>
 {
     private readonly string _max;
 
@@ -31,6 +31,7 @@ public class MaxLengthAttributeAdapter : AttributeAdapterBase<MaxLengthAttribute
         }
         
         MergeAttribute(context.Attributes, "maxlength", _max);
+        MergeErrorMessageTitle(context);
     }
 
     /// <inheritdoc />

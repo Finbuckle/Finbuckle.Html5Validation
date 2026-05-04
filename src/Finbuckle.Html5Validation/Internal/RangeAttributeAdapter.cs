@@ -13,7 +13,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class RangeAttributeAdapter : AttributeAdapterBase<RangeAttribute>
+public class RangeAttributeAdapter : Html5AttributeAdapterBase<RangeAttribute>
 {
     private readonly string _max;
     private readonly string _min;
@@ -41,6 +41,7 @@ public class RangeAttributeAdapter : AttributeAdapterBase<RangeAttribute>
         
         MergeAttribute(context.Attributes, "max", _max);
         MergeAttribute(context.Attributes, "min", _min);
+        MergeErrorMessageTitle(context);
     }
 
     /// <inheritdoc />

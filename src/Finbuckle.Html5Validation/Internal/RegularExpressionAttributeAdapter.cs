@@ -12,7 +12,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Finbuckle.Html5Validation.Internal;
 
-public class RegularExpressionAttributeAdapter : AttributeAdapterBase<RegularExpressionAttribute>
+public class RegularExpressionAttributeAdapter : Html5AttributeAdapterBase<RegularExpressionAttribute>
 {
     public RegularExpressionAttributeAdapter(RegularExpressionAttribute attribute, IStringLocalizer? stringLocalizer)
         : base(attribute, stringLocalizer)
@@ -27,6 +27,7 @@ public class RegularExpressionAttributeAdapter : AttributeAdapterBase<RegularExp
         }
         
         MergeAttribute(context.Attributes, "pattern", Attribute.Pattern);
+        MergeErrorMessageTitle(context);
     }
 
     /// <inheritdoc />

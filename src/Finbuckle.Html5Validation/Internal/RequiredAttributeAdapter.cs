@@ -15,7 +15,7 @@ namespace Finbuckle.Html5Validation.Internal;
 /// <summary>
 /// <see cref="AttributeAdapterBase{TAttribute}"/> for <see cref="RequiredAttribute"/>.
 /// </summary>
-public class RequiredAttributeAdapter : AttributeAdapterBase<RequiredAttribute>
+public class RequiredAttributeAdapter : Html5AttributeAdapterBase<RequiredAttribute>
 {
     /// <summary>
     /// Initializes a new instance of <see cref="RequiredAttributeAdapter"/>.
@@ -36,6 +36,7 @@ public class RequiredAttributeAdapter : AttributeAdapterBase<RequiredAttribute>
         }
 
         MergeAttribute(context.Attributes, "required", "");
+        MergeErrorMessageTitle(context);
     }
 
     /// <inheritdoc />
