@@ -35,6 +35,14 @@ internal class RequiredAttributeAdapter : Html5AttributeAdapterBase<RequiredAttr
             throw new ArgumentNullException(nameof(context));
         }
 
+        // ASP.NET Core marks bool with RequiredAttribute. Don't add the HTML5 required attribute for bool
+        // as it would cause unchecked checkboxes to block form submission in the browser.
+        // This matches the behavior of the built-in client-side validation.
+        if (context.ModelMetadata.ModelType == typeof(bool))
+        {
+            return;
+        }
+
         MergeAttribute(context.Attributes, "required", "");
         MergeErrorMessageTitle(context);
     }
