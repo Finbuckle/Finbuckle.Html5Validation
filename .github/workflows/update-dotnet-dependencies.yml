@@ -1,0 +1,67 @@
+name: Update .NET Dependencies
+
+on:
+  schedule:
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.changes.outputs.has_changes }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.2.0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5.3.0
+        with:
+          dotnet-version: 10
+
+      - name: Install dotnet-outdated
+        run: dotnet tool install --global dotnet-outdated-tool
+
+      - name: Update dependencies
+        run: dotnet outdated --upgrade Finbuckle.MultiTenant.slnx
+
+      - name: Regenerate lock files
+        run: dotnet restore --force-evaluate
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: update .NET dependencies"
+          git push origin HEAD
+
+  release:
+    needs: update-dependencies
+    if: needs.update-dependencies.outputs.has_changes == 'true'
+    uses: ./.github/workflows/release.yml
+    with:
+      draft: 'auto'
+    secrets: inherit
+
+  publish-nuget:
+    needs: release
+    if: needs.release.outputs.bump_level != '' && needs.release.outputs.drafted == 'false'
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/nuget-push-public.yml
+    secrets: inherit
