@@ -17,7 +17,7 @@ jobs:
         with:
           dotnet-version: 10
       - name: Create the package
-        run: dotnet test -c Release -p:ContinuousIntegrationBuild=true && dotnet pack --no-build -c Release --output nupkgs
+        run: dotnet pack -c Release --output nupkgs
       - name: NuGet login
         uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
         id: nuget-login
