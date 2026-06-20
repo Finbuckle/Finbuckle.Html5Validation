@@ -1,3 +1,9 @@
+## [10.0.1](https://github.com/Finbuckle/Finbuckle.Html5Validation/compare/v10.0.0...v10.0.1) (2026-06-20)
+
+### Bug Fixes
+
+* skip HTML5 required attribute for bool ([#13](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/13)) (([fff2958](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/fff2958926f3f1fde106d19bb7ce6ee0bb2466ea)))
+
 ## [10.0.0](https://github.com/Finbuckle/Finbuckle.Html5Validation/compare/v9.0.0...v10.0.0) (2026-05-04)
 
 ### ⚠ BREAKING CHANGES

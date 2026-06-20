@@ -1,7 +1,7 @@
 # Finbuckle.Html5Validation
 
 1. [Introduction](#introduction)
-2. [What's New in v<span class="_version">10.0.0</span>](#whats-new)
+2. [What's New in v<span class="_version">10.0.1</span>](#whats-new)
 3. [Installation](#installation)
 4. [Supported Data Annotations](#supported-data-annotations)
 5. [FAQ](#faq)
@@ -16,22 +16,16 @@ and require the use of the `jquery.validate` and `jquery.validate.unobtrusive` l
 
 This library overrides this behavior to generate standard HTML5 validation attributes.
 
-## <a name="whats-new"></a> What's New in v<span class="_version">10.0.0</span>
+## <a name="whats-new"></a> What's New in v<span class="_version">10.0.1</span>
 
-> This section only lists release update details specific to v<span class="_version">10.0.0</span>. See
+> This section only lists release update details specific to v<span class="_version">10.0.1</span>. See
 > the [changelog file](CHANGELOG.md) for all release update details.
 <!--_release-notes-->
+### Bug Fixes
 
-### ⚠ BREAKING CHANGES
+* skip HTML5 required attribute for bool ([#13](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/13)) (([fff2958](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/fff2958926f3f1fde106d19bb7ce6ee0bb2466ea)))
 
-* The library now targets net10.0 only. .NET 8 and .NET 9
-are no longer supported.
 
-### Features
-
-* Add title attribute containing error message to validated inputs ([#3](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/3)) ([b285611](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/b2856113be523d196a7b849cd7b3e86a949ea7d6))
-* drop .NET 8 and .NET 9 support, target .NET 10 only ([#9](https://github.com/Finbuckle/Finbuckle.Html5Validation/issues/9)) ([14580d1](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/14580d1f95aa878502b9d5474a201e64b953099c))
-* Update to .NET 10 ([13d0ce8](https://github.com/Finbuckle/Finbuckle.Html5Validation/commit/13d0ce8248f8675b1ea696a0f46963b88dd7234c))
 <!--_release-notes-->
 
 ## Installation
