@@ -100,9 +100,6 @@ UpdateVersionSpans(newVersion, repoRoot);
 // --- Step 9 & 10: Update <!--_release-notes--> blocks ---
 UpdateReleaseNotesBlocks(releaseNotes, repoRoot);
 
-// --- Step 11: Insert release notes into <!--_history--> block in docs/History.md ---
-UpdateHistoryBlock(releaseNotes, repoRoot);
-
 Console.WriteLine();
 Console.WriteLine($"Previous version : {currentVersion!.ToTag()}");
 Console.WriteLine($"New version      : {newVersion.ToTag()}");
