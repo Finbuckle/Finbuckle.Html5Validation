@@ -654,31 +654,6 @@ static void UpdateReleaseNotesBlocks(string releaseNotes, string repoRoot)
     }
 }
 
-// STEP 11 - Prepend the release notes to docs/History.md, preserving any
-// top-level "# …" heading that already exists at the top of the file.
-static void UpdateHistoryBlock(string releaseNotes, string repoRoot)
-{
-    Console.WriteLine("Step 11: Prepend release notes to docs/History.md");
-    Console.WriteLine();
-
-    string historyPath = Path.Combine(repoRoot, "docs", "History.md");
-
-    if (!File.Exists(historyPath))
-        throw new FileNotFoundException($"Required file not found: {historyPath}");
-
-    string existing = File.ReadAllText(historyPath);
-
-    var headerMatch = Regex.Match(existing, @"^(#[^#][^\n]*\n+)", RegexOptions.Multiline);
-    string newContent = (headerMatch.Success && existing.StartsWith(headerMatch.Value))
-        ? headerMatch.Value + releaseNotes + existing[headerMatch.Length..]
-        : releaseNotes + existing;
-
-    File.WriteAllText(historyPath, newContent);
-    Console.WriteLine($"{historyPath} updated.");
-}
-
-
-
 // ============================================================================
 // TYPE DECLARATIONS
 // Per the C# spec, standalone type declarations must come AFTER all
