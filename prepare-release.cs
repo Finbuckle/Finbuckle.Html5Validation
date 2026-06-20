@@ -12,10 +12,8 @@
 //    4. Calculate the version bump: MAJOR / MINOR / PATCH / none
 //    5. Build formatted release notes and prepend them to CHANGELOG.md
 //    6. Update <Version> in src/Directory.Build.props
-//    7. Update <span class="_version"> elements in README.md and docs/*.md
-//    8. Update <!--_release-notes--> blocks in docs/*.md (full release notes)
-//    9. Update <!--_release-notes--> block in README.md (release notes without section heading)
-//   10. Prepend release notes to docs/History.md
+//    7. Update <span class="_version"> elements in README.md
+//    8. Update <!--_release-notes--> block in README.md (release notes without section heading)
 //
 // Conventional Commits and version bump rules:
 //   MAJOR bump  - any commit with `!` after the type, e.g. `feat!:` or `fix(scope)!:`
@@ -42,7 +40,7 @@ string repoRoot = Directory.GetCurrentDirectory();
 if (!Directory.Exists(Path.Combine(repoRoot, ".git")))
     throw new InvalidOperationException("No .git directory found. Run this script from the repository root.");
 
-Console.WriteLine("Finbuckle.MultiTenant - Release Preparation");
+Console.WriteLine("Finbuckle.Html5Validation - Release Preparation");
 Console.WriteLine();
 
 // --- Step 1: Find the latest semantic-version tag ---
@@ -94,10 +92,10 @@ PrependToChangelog(releaseNotes, repoRoot);
 // --- Step 7: Update <Version> in src/Directory.Build.props ---
 UpdateBuildPropsVersion(newVersion, repoRoot);
 
-// --- Step 8: Update _version spans in README.md and docs/*.md ---
+// --- Step 8: Update _version spans in README.md ---
 UpdateVersionSpans(newVersion, repoRoot);
 
-// --- Step 9 & 10: Update <!--_release-notes--> blocks ---
+// --- Step 9: Update <!--_release-notes--> block ---
 UpdateReleaseNotesBlocks(releaseNotes, repoRoot);
 
 Console.WriteLine();
@@ -155,7 +153,7 @@ static string Git(string args)
 
 // Resolve the GitHub HTTPS base URL from the git remote named "origin".
 // Handles both SSH (git@github.com:Owner/Repo.git) and HTTPS remote formats.
-// Falls back to the Finbuckle repo URL if the remote cannot be read.
+// Falls back to this repository URL if the remote cannot be read.
 static string GetRepoUrl()
 {
     try
@@ -169,7 +167,7 @@ static string GetRepoUrl()
     }
     catch
     {
-        return "https://github.com/Finbuckle/Finbuckle.MultiTenant";
+        return "https://github.com/Finbuckle/Finbuckle.Html5Validation";
     }
 }
 
@@ -573,39 +571,32 @@ static void UpdateBuildPropsVersion(SemanticVersion newVersion, string repoRoot)
 }
 
 // STEP 8 - Replace <span class="_version">…</span> elements with the new
-// version string in README.md and every docs/*.md file.
+// version string in README.md.
 static void UpdateVersionSpans(SemanticVersion newVersion, string repoRoot)
 {
     Console.WriteLine("Step 8: Update _version spans");
     Console.WriteLine();
 
-    var files = new List<string>();
     string readme = Path.Combine(repoRoot, "README.md");
-    if (File.Exists(readme)) files.Add(readme);
-
-    string docsDir = Path.Combine(repoRoot, "docs");
-    if (Directory.Exists(docsDir))
-        files.AddRange(Directory.GetFiles(docsDir, "*.md"));
-
-    foreach (var file in files)
+    if (File.Exists(readme))
     {
-        string content = File.ReadAllText(file);
+        string content = File.ReadAllText(readme);
         string updated = Regex.Replace(
             content,
             @"<span class=""_version"">.*?</span>",
             $"""<span class="_version">{newVersion}</span>""");
 
 
-        File.WriteAllText(file, updated);
-        Console.WriteLine($"{file} updated.");
+        File.WriteAllText(readme, updated);
+        Console.WriteLine($"{readme} updated.");
     }
 }
 
-// STEP 9 & 10 - Replace <!--_release-notes-->…<!--_release-notes--> delimiters
-// in docs/*.md (full release notes) and README.md (notes without the first heading line).
+// STEP 9 - Replace <!--_release-notes-->…<!--_release-notes--> delimiters
+// in README.md with release notes without the first heading line.
 static void UpdateReleaseNotesBlocks(string releaseNotes, string repoRoot)
 {
-    Console.WriteLine("Step 9 & 10: Update <!--_release-notes--> blocks");
+    Console.WriteLine("Step 9: Update <!--_release-notes--> block");
     Console.WriteLine();
 
     // For README, strip the first line (the "## [version](url) (date)" heading)
@@ -615,24 +606,6 @@ static void UpdateReleaseNotesBlocks(string releaseNotes, string repoRoot)
     // Regex that matches the content between the marker comments (dotall / singleline)
     const string markerPattern = @"<!--_release-notes-->.*?<!--_release-notes-->";
     const RegexOptions dotAll  = RegexOptions.Singleline;
-
-    string docsDir = Path.Combine(repoRoot, "docs");
-    if (Directory.Exists(docsDir))
-    {
-        foreach (var file in Directory.GetFiles(docsDir, "*.md"))
-        {
-            string content = File.ReadAllText(file);
-            if (!Regex.IsMatch(content, markerPattern, dotAll)) continue;
-
-            string updated = Regex.Replace(
-                content,
-                markerPattern,
-                $"<!--_release-notes-->\n{releaseNotes}\n<!--_release-notes-->",
-                dotAll);
-            File.WriteAllText(file, updated);
-            Console.WriteLine($"{file} updated.");
-        }
-    }
 
     string readme = Path.Combine(repoRoot, "README.md");
     if (File.Exists(readme))
